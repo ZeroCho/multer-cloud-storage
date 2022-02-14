@@ -105,7 +105,7 @@ export default class MulterGoogleCloudStorage implements multer.StorageEngine {
 
 		opts.bucket = opts.bucket || process.env.GCS_BUCKET || null;
 		opts.projectId = opts.projectId || process.env.GCLOUD_PROJECT || null;
-		opts.keyFilename = opts.keyFilename || process.env.GCS_KEYFILE || null;
+		opts.keyFilename = opts.keyFilename || process.env.GOOGLE_APPLICATION_CREDENTIALS || null;
 
 		if (!opts.bucket) {
 			throw new Error('You have to specify bucket for Google Cloud Storage to work.');
